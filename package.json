@@ -1,0 +1,65 @@
+{
+  "publisher": "injurka",
+  "name": "theme-xsolare",
+  "displayName": "xSolare Theme",
+  "type": "module",
+  "version": "0.0.0",
+  "packageManager": "pnpm@8.15.5",
+  "description": "xSolare theme for VS Code",
+  "license": "MIT",
+  "galleryBanner": {
+    "color": "#0b0c0f",
+    "theme": "dark"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/injurka/vscode-theme-xsolare"
+  },
+  "bugs": {
+    "url": "https://github.com/injurka/vscode-theme-xsolare/issues"
+  },
+  "keywords": [
+    "theme",
+    "xsolare",
+    "dark"
+  ],
+  "categories": [
+    "Themes"
+  ],
+  "exports": {
+    "./*": "./*"
+  },
+  "icon": "icon.png",
+  "files": [
+    "extra",
+    "themes"
+  ],
+  "engines": {
+    "vscode": "^1.43.0"
+  },
+  "contributes": {
+    "themes": [
+      {
+        "label": "xSolare Dark",
+        "uiTheme": "vs-dark",
+        "path": "./themes/xsolare-dark.json"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint . --fix",
+    "release": "bumpp --all && vsce publish --no-dependencies"
+  },
+  "devDependencies": {
+    "@antfu/eslint-config": "^2.11.0",
+    "@vscode/vsce": "^2.24.0",
+    "bumpp": "^9.4.0",
+    "eslint": "^8.57.0"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "pnpm dlx lint-staged",
+    "post-commit": "git status",
+    "post-merge": "pnpm i"
+  },
+  "preview": true
+}

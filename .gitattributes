@@ -1,0 +1,9 @@
+* text=auto
+
+# Images
+*.gif binary
+*.ico binary
+*.jpg binary
+*.png binary
+*.svg eol=lf encoding=UTF-8
+*.webp binary
